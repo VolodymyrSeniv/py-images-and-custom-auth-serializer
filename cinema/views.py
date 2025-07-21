@@ -76,12 +76,10 @@ class MovieViewSet(
         """Converts a list of string IDs to a list of integers"""
         return [int(str_id) for str_id in qs.split(",")]
 
-    @action(
-            methods=["POST"],
+    @action(methods=["POST"],
             detail=True,
             permission_classes=(IsAdminUser,),
-            url_path="upload-image"
-    )
+            url_path="upload-image")
     def upload_image(self, request, pk=None):
         movie = self.get_object()
         serializer = MovieImageSerializer(movie, data=request.data)
