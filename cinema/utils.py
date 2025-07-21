@@ -1,5 +1,5 @@
 import os
-from slugify import slugify
+from slugify.slugify import slugify
 import uuid
 
 
